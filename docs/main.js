@@ -6,10 +6,7 @@ var appSistema = new Vue({
     el: '#appSistema',
     data: {
         forms:{
-            'cliente':{mostrar:false},
-            'producto':{mostrar:false},
-            'proveedor':{mostrar:false},
-            'categoria':{mostrar:false}
+            'cliente':{mostrar:false}
         }
     },
     methods: {
@@ -24,18 +21,9 @@ var appSistema = new Vue({
             indexDb.onupgradeneeded = e=>{
                 let db = e.target.result;
                 tblcliente = db.createObjectStore('cliente', {keyPath:'idCliente'});
-                tblproducto = db.createObjectStore('producto', {keyPath:'idProducto'});
-                tblproveedor = db.createObjectStore('proveedor', {keyPath:'idProveedor'});
-                tblcategoria = db.createObjectStore('categoria', {keyPath:'idCategoria'});
 
                 tblcliente.createIndex('idCliente', 'idCliente', {unique:true});
                 tblcliente.createIndex('codigo', 'codigo', {unique:false});
-
-                tblproducto.createIndex('idProducto', 'idProducto', {unique:true});
-                tblproducto.createIndex('codigo', 'codigo', {unique:false});
-
-                tblcategoria.createIndex('idCategoria', 'idCategoria', {unique:true});
-                tblcategoria.createIndex('codigo', 'codigo', {unique:false});
             };
             indexDb.onsuccess = e=>{
                 db = e.target.result;
