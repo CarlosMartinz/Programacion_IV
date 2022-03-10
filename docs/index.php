@@ -39,10 +39,10 @@
             </div>
             <div class="row">
                 <div class="col pt-4">        
-                <button @click="btnAltaLecturas" class="btn btn-info" title="Nuevo">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-square-fill mb-1" viewBox="0 0 16 16">
-                        <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
-                    </svg> <span class="h5 ml-2 mt-4 font-weight-bold btn-info">   LECTURAS</span>
+                    <button @click="btnAltaLecturas" class="btn btn-info" title="Nuevo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-square-fill mb-1" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
+                        </svg> <span class="h5 ml-2 mt-4 font-weight-bold btn-info">   LECTURAS</span>
                 </div>
             </div>    
             <div class="row">
@@ -100,19 +100,16 @@
                             </tr>    
                         </thead>
                         <tbody>
-                            <tr v-for="(cliente,indice) of clientes">                                
-                                <td>{{cliente.id}}</td>                                
-                                <td>{{cliente.marca}}</td>
-                                <td>{{cliente.modelo}}</td>
+                            <tr v-for="(clientes,indice) of clientes">                                
+                                <td>{{clientes.idLectura}}</td>                                
+                                <td>{{clientes.idCliente}}</td>
+                                <td>{{clientes.fecha}}</td>
+                                <td>{{clientes.anterior}}</td>
+                                <td>{{clientes.actual}}</td>
+                                <td>{{clientes.pago}}</td>
                                 <td>
-                                    <div class="col-md-8">
-                                    <input type="number" v-model.number="cliente.stock" class="form-control text-right" disabled>      
-                                    </div>    
-                                </td>
-                                <td>
-                                <div class="btn-group" role="group">
-                                    <button class="btn btn-secondary" title="Editar" @click="btnEditar(cliente.id, cliente.marca, cliente.modelo, cliente.stock)"><i class="fas fa-pencil-alt"></i></button>    
-                                    <button class="btn btn-danger" title="Eliminar" @click="btnBorrar(cliente.id)"><i class="fas fa-trash-alt"></i></button>      
+                                <div class="btn-group" role="group">   
+                                    <button class="btn btn-danger" title="Eliminar" @click="btnBorrarLectura(clientes.idLectura)"><i class="fas fa-trash-alt"></i></button>      
 								</div>
                                 </td>
                             </tr>    
@@ -134,6 +131,7 @@
     <!--Sweet Alert 2 -->        
     <script src="plugins/sweetalert2/sweetalert2.all.min.js"></script>      
     <!--Código custom -->          
-    <script src="main.js"></script>         
+    <script src="main.js"></script>    
+    <script src="lectura.js"></script>      
     </body>
 </html>

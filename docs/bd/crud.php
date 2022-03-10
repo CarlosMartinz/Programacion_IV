@@ -45,6 +45,17 @@ switch($opcion){
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();                
         break;
+    case 6:
+        $consulta = "SELECT idLectura, clientes.nombre, fecha, anterior, actual, pago FROM lecturas,clientes";
+        $resultado = $conexion->prepare($consulta);
+        $resultado->execute();
+        $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
+        break;
+    case 7:
+        $consulta = "DELETE FROM clientes WHERE idCliente='$idCliente' ";		
+        $resultado = $conexion->prepare($consulta);
+        $resultado->execute();                           
+        break; 
 }
 print json_encode($data, JSON_UNESCAPED_UNICODE);
 $conexion = NULL;
