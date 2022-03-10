@@ -102,66 +102,66 @@ Vue.component('lectura', {
         //this.obtenerDatos();
     },
     template: `
-        <div id='appLectura'>
+        <div id='appLectura' class="bg-light">
             <form @submit.prevent="guardarLectura" @reset.prevent="nuevoLectura" method="post" id="frmLectura">
-                <div class="card mb-3">
-                    <div class="card-header text-white bg-dark">
+                <div class="card mb-3 bg-light">
+                    <div class="card-header bg-light text-white bg-dark">
                         Administracion de Lecturas
-                        <button type="button" class="btn-close bg-white" data-bs-dismiss="alert" data-bs-target="#frmLectura" aria-label="Close"></button>
+                        <button type="button" class="btn-close bg-light bg-white" data-bs-dismiss="alert" data-bs-target="#frmLectura" aria-label="Close"></button>
                     </div>
-                    <div class="card-body">
-                        <div class="row p-1">
-                            <div class="col col-md-1">Lectura</div>
-                            <div class="col col-md-2">
-                                <input type="number" placeholder="meses" class="form-control" min="1" v-model="lectura.meses" @change="calcularPago">
+                    <div class="card-bodybg-light">
+                        <div class="row p-1 bg-light">
+                            <div class="col col-md-1 bg-light">Lectura</div>
+                            <div class="col col-md-2 bg-light">
+                                <input type="number" placeholder="meses" class="form-control bg-light" min="1" v-model="lectura.meses" @change="calcularPago">
                             </div>
                         </div>
-                        <div class="row p-1">
-                            <div class="col col-md-1">Cliente</div>
-                            <div class="col col-md-2">
-                                <select v-model="lectura.idCliente" class="form-control">
+                        <div class="row p-1 bg-light">
+                            <div class="col col-md-1 bg-light">Cliente</div>
+                            <div class="col col-md-2 bg-light">
+                                <select v-model="lectura.idCliente" class="form-control bg-light">
                                     <option value="">Seleccione un cliente</option>
                                     <option v-for="cliente in clientes" :value="cliente.idCliente">{{ cliente.nombre }}</option>
                                 </select>
                             </div>
-                            <div class="col col-md-2">
+                            <div class="col bg-light col-md-2">
                                 <button type="button" class="btn btn-info" @click="obtenerDatosCliente">Actualizar</button>
                             </div>
                         </div>
-                        <div class="row p-1">
-                            <div class="col col-md-1">Fecha</div>
-                            <div class="col col-md-2">
+                        <div class="row p-1 bg-light">
+                            <div class="col col-md-1 bg-light">Fecha</div>
+                            <div class="col col-md-2 bg-light">
                                 <input v-model="lectura.fecha" placeholder="fecha de lectura" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required title="Fecha de lectura" class="form-control" type="date">
                             </div>
                         </div>
-                        <div class="row p-1">
-                            <div class="col col-md-1">Anterior</div>
-                            <div class="col col-md-2">
+                        <div class="row p-1 bg-light">
+                            <div class="col col-md-1 bg-light">Anterior</div>
+                            <div class="col col-md-2 bg-light">
                                 <input v-model="lectura.anterior" placeholder="lectura anterior" pattern="[0-9]{1,}" required title="Lectura anterior" class="form-control" type="number">
                             </div>
                         </div>
-                        <div class="row p-1">
-                            <div class="col col-md-1">Actual</div>
-                            <div class="col col-md-2">
+                        <div class="row p-1 bg-light">
+                            <div class="col col-md-1 bg-light">Actual</div>
+                            <div class="col col-md-2 bg-light">
                                 <input v-model="lectura.actual" placeholder="lectura actual" pattern="[0-9]{1,}" required title="Lectura actual" class="form-control" type="number">
                             </div>
                         </div>
-                        <div class="row p-1">
-                            <div class="col col-md-1">Pago</div>
-                            <div class="col col-md-2">
+                        <div class="row p-1 bg-light">
+                            <div class="col col-md-1 bg-light">Pago</div>
+                            <div class="col col-md-2 bg-light">
                                 <input v-model="lectura.pago" placeholder="pago" pattern="[0-9]{1,}" disabled title="Pago" class="form-control" type="text">
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col col-md-3 text-center">
+                        <div class="row bg-light">
+                            <div class="col col-md-3 bg-light text-center">
                                 <div class="alert alert-warning alert-dismissible fade show d-none" role="alert">
                                     {{ lectura.msg }}
                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col col-md-3 mt-2 text-center">
+                        <div class="row bg-light">
+                            <div class="col col-md-3 bg-light mt-2 text-center">
                                 <button type="submit" class="btn btn-info">Guardar</button>
                                 <button type="reset" class="btn btn-warning">Nuevo</button>
                             </div>
@@ -169,20 +169,20 @@ Vue.component('lectura', {
                     </div>
                 </div>
             </form>
-            <div class="card mb-3" id="cardBuscarLectura">
+            <div class="card mb-3 bg-light" id="cardBuscarLectura">
                 <div class="card-header text-white bg-dark">
                     Busqueda de Lecturas
                     <button type="button" class="btn-close bg-white" data-bs-dismiss="alert" data-bs-target="#cardBuscarLectura" aria-label="Close"></button>
                 </div>
-                <div class="card-body">
-                    <table class="table">
-                        <thead>
+                <div class="card-body bg-light">
+                    <table class="table bg-light">
+                        <thead class="bg-light">
                             <tr>
-                                <td colspan="6">
+                                <td colspan="6"  class="bg-light">
                                     Buscar: <input title="Introduzca el texto a buscar" @keyup="buscarLectura" v-model="buscar" class="form-control" type="text">
                                 </td>
                             </tr>
-                            <tr>
+                            <tr class="bg-light">
                                 <th>idCliente</th>
                                 <th>Lectura</th>
                                 <th>Fecha</th>
