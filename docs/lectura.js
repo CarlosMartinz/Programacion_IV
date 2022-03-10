@@ -111,7 +111,7 @@ Vue.component('lectura', {
                     </div>
                     <div class="card-body">
                         <div class="row p-1">
-                            <div class="col col-md-1">Meses</div>
+                            <div class="col col-md-1">Lectura</div>
                             <div class="col col-md-2">
                                 <input type="number" placeholder="meses" class="form-control" min="1" v-model="lectura.meses" @change="calcularPago">
                             </div>
@@ -183,8 +183,8 @@ Vue.component('lectura', {
                                 </td>
                             </tr>
                             <tr>
-                                <th>Cliente</th>
-                                <th>Meses</th>
+                                <th>idCliente</th>
+                                <th>Lectura</th>
                                 <th>Fecha</th>
                                 <th>Lectura anterior</th>
                                 <th>Lectura actual</th>
