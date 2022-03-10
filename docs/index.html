@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcial-I</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+
+    <div id="preloader"></div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid bg-dark">
+            <a class="navbar-brand bg-dark" href="#">::. PARCIAL-I .::</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse bg-dark" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 bg-dark">
+                    <li class="nav-item">
+                        <a data-form="cliente" class="nav-link mostrar bg-dark" href="#">Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a data-form="lectura" class="nav-link mostrar bg-dark" href="#">Lecturas</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="appSistema" class="container-fluid">
+        <cliente ref="cliente" v-show="forms['cliente'].mostrar"></cliente>
+        <lectura ref="lectura" v-show="forms['lectura'].mostrar"></lectura>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="cliente.js"></script>
+    <script src="lectura.js"></script>
+    <script src="main.js"></script>
+
+    <!--Preloader-->
+    <script>
+        $(function(){
+        setTimeout(function(){ 
+        $("#preloader").addClass("out");
+        }, 100);
+        setTimeout(function(){ 
+        $("#preloader").addClass("out2");
+        }, 1500);
+        setTimeout(function(){ 
+        $("#preloader").addClass("out3");
+        }, 1500);
+        setTimeout(function(){ 
+        $("#preloader").remove();
+        }, 700);
+        });
+    </script>
+
+</body>
+</html>
