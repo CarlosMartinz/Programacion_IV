@@ -77,7 +77,10 @@
                     </table>                    
                 </div>
             </div>
-
+        </div> 
+        
+        <div id="appClientes">               
+            <div class="container"> 
             <div class="row">
                 <div class="col">
                     <h2 class="text-center mt-5 text-dark"><span class="badge badge-success">Lecturas</span></h2>
@@ -117,8 +120,8 @@
                     </table>                    
                 </div>
             </div>
-
-        </div>        
+            </div>
+        </div>
     </div>        
     <!-- jQuery, Popper.js, Bootstrap JS -->
     <script src="jquery/jquery-3.3.1.min.js"></script>
