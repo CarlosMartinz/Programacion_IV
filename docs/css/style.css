@@ -1,0 +1,33 @@
+#preloader{
+    background: #000 url(../img/loader.gif) no-repeat center center;
+    background-size: 50%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+
+#preloader.out{
+  opacity:75;
+}
+
+#preloader.out2{
+    opacity:50;
+}
+
+#preloader.out3{
+    opacity:25;
+}
+
+#preloader.out3{
+    opacity:0;
+}
+
+@keyframes spin {
+    0% { -webkit-transform:rotate(0deg); }
+    100% { -webkit-transform:rotate(360deg); }
+}
+
+*{
+    background: #e1e2e1;
+}
